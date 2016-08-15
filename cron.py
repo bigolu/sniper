@@ -70,7 +70,7 @@ def notify(snipe, index):
         }
 
         # build the url for prepopulated form
-        url = 'http://sniper.bigolu.me/?%s' % (urllib.urlencode(attributes))
+        url = 'http://sniper.biggi.es/?%s' % (urllib.urlencode(attributes))
 
         register_url = 'https://sims.rutgers.edu/webreg/editSchedule.htm?login=cas&semesterSelection=92016&indexList=%s' % (index)
 
