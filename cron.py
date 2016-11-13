@@ -72,14 +72,13 @@ def notify(snipe, index):
         # build the url for prepopulated form
         url = 'http://sniper.bigo.lu/?%s' % (urllib.urlencode(attributes))
 
-        register_url = 'https://sims.rutgers.edu/webreg/editSchedule.htm?login=cas&semesterSelection=92016&indexList=%s' % (index)
+        register_url = 'https://sims.rutgers.edu/webreg/editSchedule.htm?login=cas&semesterSelection=12017&indexList=%s' % (index)
 
         email_text = 'A course (%s) that you were watching looks open. Its index number is %s. Click the link below to register for it!\n\n %s \n\n If you don\'t get in, visit this URL: \n\n %s \n\n to continue watching it.' % (course, index, register_url, url)
 
         # send out the email
         message = Message('[Course Sniper](%s) is open' %(course), sender=EMAIL_SENDER)
         message.body = email_text
-        message.add_recipient(snipe.user.email)
         message.add_recipient(snipe.user.email)
 
         mail.send(message)
